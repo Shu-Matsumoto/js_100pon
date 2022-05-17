@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.お題：数の比較
+      function compareNumbers(a, b) {
+        if (a > b) {
+          return a;
+        } else if (a < b) {
+          return b;
+        } else {
+          return "eq";
+        }
+      }
+
+      // console.log(compareNumbers(2, 5)); // 5
+      // console.log(compareNumbers(10, 9)); // 10
+      // console.log(compareNumbers(2, 2)); // eq
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 2.お題：単位の計算
+      function convertToMm(n, s) {
+        let numMM = n;
+        if (s == "km") {
+          numMM *= 1000 * 1000;
+        } else if (s == "cm") {
+          numMM *= 10;
+        }
+        return numMM;
+      }
+
+      // console.log(convertToMm(1, "km")); // 1000000
+      // console.log(convertToMm(54, "km")); // 54000000
+      // console.log(convertToMm(2, "cm")); // 20
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 3.お題：奇数か偶数か
+      function oddOrEven(n) {
+        if (n % 2 == 0) {
+          return "even";
+        } else {
+          return "odd";
+        }
+      }
+
+      // console.log(oddOrEven(4)); // even
+      // console.log(oddOrEven(5)); // odd
+      // console.log(oddOrEven(2)); // even
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 4.お題：西暦の計算
+      function calculateYears(a, b) {
+        let subYear = b - a;
+        return subYear;
+      }
+
+      // console.log(calculateYears(1990, 2014)); // 24
+      // console.log(calculateYears(1999, 2000)); // 1
+      // console.log(calculateYears(794, 1192)); // 398
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 5.お題：何番目？
+      function judgeTh(c) {
+        let abcArray = [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+        ];
+        return abcArray.findIndex((element) => element == c) + 1;
+      }
+
+      // console.log(judgeTh("C")); // 3
+      // console.log(judgeTh("X")); // 24
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 6.お題：絶対値
+      function getAbs(n) {
+        return Math.abs(n);
+      }
+
+      // console.log(getAbs(-10)); // 10
+      // console.log(getAbs(15)); // 15
+      // console.log(getAbs(0)); // 0
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 7.お題：割り算
+      function getQuotientAndSurplus(m, n) {
+        let shou = Math.floor(m / n);
+        let amari = m % n;
+        return shou + " " + amari;
+      }
+
+      // console.log(getQuotientAndSurplus(10, 3)); // 3 1
+      // console.log(getQuotientAndSurplus(12, 14)); // 0 12
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 8.お題：小文字を大文字に
+      function convertToUppercase(s) {
+        return s.toUpperCase();
+      }
+
+      // console.log(convertToUppercase("gsacademy")); // GSACADEMY
+      // console.log(convertToUppercase("abcdefghijklmnopqrstuvwxyz")); // ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 9.お題：掛け算のリスト
+      function createList(n) {
+        let outText = "";
+        for (let index = 1; index <= 9; index++) {
+          outText += index * n + " ";
+        }
+        return outText;
+      }
+
+      // console.log(createList(2)); // 2 4 6 8 10 12 14 16 18
+      // console.log(createList(3)); // 3 6 9 12 15 18 21 24 27
+      // console.log(createList(5)); // 5 10 15 20 25 30 35 40 45
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 10.お題：等差数列
+      function createSequence(m, n) {
+        let outText = "";
+        for (let index = 0; index < 10; index++) {
+          outText += m + index * n + " ";
+        }
+        return outText;
+      }
+
+      // console.log(createSequence(3, 3)); // 3 6 9 12 15 18 21 24 27 30
+      // console.log(createSequence(5, 10)); // 5 15 25 35 45 55 65 75 85 95
+      // console.log(createSequence(1, 3)); // 1 4 7 10 13 16 19 22 25 28
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 11.お題：カウントダウン
+      function countDown(n) {
+        let outText = "";
+        let counter = n;
+        while (counter > 0) {
+          outText += counter + " ";
+          counter--;
+        }
+        return outText;
+      }
+
+      // console.log(countDown(3)); // 3 2 1
+      // console.log(countDown(10)); // 10 9 8 7 6 5 4 3 2 1
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 12.お題：N 文字目まで出力
+      function getOneToN(s, n) {
+        return s.substr(0, n);
+      }
+
+      // console.log(getOneToN("aabbccdd", 5)); // aabbc
+      // console.log(getOneToN("gsacademyfukuoka", 9)); // gsacademy
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 13.お題：最大と最小
+      function getMaxAndMin(s) {
+        let array = s.split(" ");
+        let outText = Math.max(...array);
+        outText += " " + Math.min(...array);
+        return outText;
+      }
+
+      // console.log(getMaxAndMin("9 12 3 6 10")); // 12 3
+      // console.log(getMaxAndMin("1 1 2 2 3")); // 3 1
+      // console.log(getMaxAndMin("5 9 -1 10 2")); // 10 -1
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 14.お題：文字列から N 番目
+      function getNthChar(s, n) {
+        return s.substr(n - 1, 1);
+      }
+
+      // console.log(getNthChar("gsacademy", 3)); // a
+      // console.log(getNthChar("abcdefg", 5)); // e
+      // console.log(getNthChar("qwertyu", 1)); // q
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 15.お題：文字列の一致
+      function isEqual(s, t) {
+        return s === t ? "Yes" : "No";
+      }
+
+      // console.log(isEqual("gsacademy", "gsacademy")); // Yes
+      // console.log(isEqual("JavaScript", "ジャバスク")); // No
+      // console.log(isEqual("aaaaa", "aaaaaa")); // No
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 16.お題：A の個数
+      function getNumberOfA(s) {
+        var ex = /A/g; // 正規表現
+        var array = s.match(ex);
+        if (array == null) {
+          return 0;
+        } else {
+          return array.length;
+        }
+      }
+
+      // console.log(getNumberOfA("GSACADEMY")); // 2
+      // console.log(getNumberOfA("aAaAaA")); // 3
+      // console.log(getNumberOfA("JavaScript")); // 0
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 17.お題：表面積の計算
+      function getSurfaceArea(a) {
+        return a * a * 6;
+      }
+
+      // console.log(getSurfaceArea(4)); // 96
+      // console.log(getSurfaceArea(1)); // 6
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 18.お題：三角形の内角の和
+      function getAngle(a, b) {
+        return 180 - (a + b);
+      }
+
+      // console.log(getAngle(30, 90)); // 60
+      // console.log(getAngle(45, 45)); // 90
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 19.お題：数字の出力
+      function zeroPadding3(n) {
+        return n.toString().padStart("3", "0");
+      }
+
+      // console.log(zeroPadding3(98)); // 098
+      // console.log(zeroPadding3(2)); // 002
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 20.お題：一週間の予定
+      function getPaidHolidays(s) {
+        var ex = /no/g; // 正規表現
+        var array = s.match(ex);
+        if (array == null) {
+          return 0;
+        } else {
+          return array.length;
+        }
+      }
+
+      // console.log(getPaidHolidays("yes yes yes yes no no yes")); // 2
+      // console.log(getPaidHolidays("yes no no no no no yes")); // 5
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 21.お題：n までの和
+      function getSum(n) {
+        let sum = 0;
+        for (let counter = 1; counter <= n; counter++) {
+          sum += counter;
+        }
+        return sum;
+      }
+
+      // console.log(getSum(10)); // 55
+      // console.log(getSum(99)); // 4950
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 22.お題：数字の桁数
+      function getNumberOfDigits(n) {
+        return n.toString().length;
+      }
+
+      // console.log(getNumberOfDigits(100)); // 3
+      // console.log(getNumberOfDigits(114514)); // 6
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 23.お題：サイコロの裏面
+      function getBackSide(n) {
+        return 7 - n;
+      }
+
+      // console.log(getBackSide(1)); // 6
+      // console.log(getBackSide(3)); // 4
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 24.お題：単位の変換
+      function convertToSeconds(n) {
+        return n * 60;
+      }
+
+      // console.log(convertToSeconds(16)); // 960
+      // console.log(convertToSeconds(3)); // 180
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+      // 25.お題：充電時間
+      function getTimeUntilFull(n) {
+        return 100 - n;
+      }
+
+      // console.log(getTimeUntilFull(70)); // 30
+      // console.log(getTimeUntilFull(25)); // 75
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 26.お題：頭文字
+      function getInitialFromName(s) {
+        let array = s.split(" ");
+        if (array.length == 2) {
+          return array[0].substr(0, 1) + "." + array[1].substr(0, 1);
+        } else {
+          return "---";
+        }
+      }
+
+      // console.log(getInitialFromName("Dio Brando")); // D.B
+      // console.log(getInitialFromName("Pannacotta Fugo")); // P.F
+      // console.log(getInitialFromName("Gyro Zeppeli")); // G.Z
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 27.お題：どれにしようかな
+      function choiceOfGod(n) {
+        if (21 % n != 0) {
+          return 21 % n;
+        } else {
+          return n;
+        }
+      }
+
+      // console.log(choiceOfGod(4)); // 1
+      // console.log(choiceOfGod(3)); // 3
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 28.お題：日付のデータ
+      function formatYMD(s) {
+        let array = s.split(" ");
+        if (array.length == 3) {
+          return (
+            array[0].padStart("4", "0") +
+            "/" +
+            array[1].padStart("2", "0") +
+            "/" +
+            array[2].padStart("2", "0")
+          );
+        } else {
+          return "---";
+        }
+      }
+
+      // console.log(formatYMD("2021 1 1")); // 2021/01/01
+      // console.log(formatYMD("2020 10 10")); // 2020/10/10
+      // console.log(formatYMD("794 11 29")); // 0794/11/29
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 29.お題：アットマーク
+      function convertAtToAtMark(s) {
+        const regex = /at/g;
+        return s.replace(regex, "@");
+      }
+
+      // console.log(convertAtToAtMark("gsatcodeatquantity")); // gs@code@quantity
+      // console.log(convertAtToAtMark("atatatjojoatatat")); // @@@jojo@@@
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 30.お題：花粉症でつらい
+      function getNeedBox(m, n) {
+        return Math.ceil(n / m);
+      }
+
+      // console.log(getNeedBox(7, 30)); // 5
+      // console.log(getNeedBox(3, 100)); // 34
+      // console.log(getNeedBox(7, 5)); // 1
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 31.お題：本棚選び
+      function canStoreBooks(s) {
+        let array = s.split(" ");
+        if (array.length == 3) {
+          let capa = Number(array[1]) * Number(array[2]);
+          let habaSum = Number(array[0]);
+          return habaSum <= capa ? "OK" : "NG";
+        } else {
+          return "NG";
+        }
+      }
+
+      // console.log(canStoreBooks("400 5 85")); // OK
+      // console.log(canStoreBooks("500 4 70")); // NG
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 32.お題：試合の回数
+      function calculateNumberOfGames(n) {
+        let sum = 0;
+        for (let counter = n - 1; counter > 0; counter--) {
+          sum += counter;
+        }
+        return sum;
+      }
+
+      // console.log(calculateNumberOfGames(4)); // 6
+      // console.log(calculateNumberOfGames(10)); // 45
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 33.お題：連休の天気
+      function daysOfGoOut(s) {
+        let array = s.split(" ");
+        let count = array.filter((element) => Number(element) <= 30).length;
+        return count;
+      }
+
+      // console.log(daysOfGoOut("13 0 15 30 89 100 30")); // 5
+      // console.log(daysOfGoOut("0 14 18 22 0 2 4")); // 7
+      // console.log(daysOfGoOut("99 99 99 99 99 99 99")); // 0
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 34.お題：正三角形かどうか
+      function isEquilateralTriangle(s) {
+        let array = s.split(" ");
+        if (array[0] == array[1] && array[1] == array[2]) {
+          return "Yes";
+        } else {
+          return "No";
+        }
+      }
+
+      // console.log(isEquilateralTriangle("10 10 10")); // yes
+      // console.log(isEquilateralTriangle("3 4 5")); // No
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 35.お題：天気の表示
+      function showWeather(n) {
+        if (n >= 0 && n <= 30) {
+          return "sunny";
+        } else if (n >= 31 && n <= 70) {
+          return "cloudy";
+        } else {
+          return "rainy";
+        }
+      }
+
+      // console.log(showWeather(31)); // cloudy
+      // console.log(showWeather(2)); // sunny
+      // console.log(showWeather(71)); // rainy
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 36.お題：はじめまして
+      function greet(s1, s2) {
+        if (s2 === "M") {
+          return "Hi, Mr." + s1;
+        } else {
+          return "Hi, Ms." + s1;
+        }
+      }
+
+      // console.log(greet("Stroheim", "M")); // Hi, Mr.Stroheim
+      // console.log(greet("Trish", "F")); // Hi, Ms.Trish
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 37.お題：通知票
+      function convertNumberToAlphabet(s) {
+        let arrayNum = [5, 4, 3, 2, 1];
+        let arrayAbc = ["A", "B", "C", "D", "E"];
+
+        let outText = "";
+        for (let index = 0; index < s.length; index++) {
+          outText +=
+            arrayAbc[
+              arrayNum.findIndex(
+                (element) => element == Number(s.substr(index, 1))
+              )
+            ];
+        }
+        return outText;
+      }
+
+      // console.log(convertNumberToAlphabet("53342")); // ACCBD
+      // console.log(convertNumberToAlphabet("22222")); // DDDDD
+      // console.log(convertNumberToAlphabet("51111")); // AEEEE
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 38.お題：不思議なタマゴ
+      function getNumberOfSteps(s) {
+        let array = s.split(" ");
+        let max = Math.max(...array);
+        return max;
+      }
+
+      // console.log(getNumberOfSteps("1 2 5")); // 5
+      // console.log(getNumberOfSteps("2 5 5")); // 5
+      // console.log(getNumberOfSteps("1 2 1")); // 2
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 39.お題：台風の間隔
+      function getInterval(s) {
+        let array = s.split(" ");
+        let outText = "";
+        for (let index = 1; index < array.length; index++) {
+          outText += Number(array[index]) - Number(array[index - 1]) + " ";
+        }
+        return outText;
+      }
+
+      // console.log(getInterval("5 8 19 25 31")); // 3 11 6 6
+      // console.log(getInterval("2 3 7 9 28")); // 1 4 2 19
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 40.お題：◯◯ の秋
+      function getAutumn(s) {
+        let outText = s.replace("noaki", "");
+        return outText;
+      }
+
+      // console.log(getAutumn("codenoaki")); // code
+      // console.log(getAutumn("dokusyo")); // dokusyo
+      // console.log(getAutumn("javascriptnoaki")); // javascript
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 41.お題：お月見だんご
+      function getNumberOfDango(s) {
+        let array = s.split(" ");
+        let sum = 0;
+        array.forEach((element) => {
+          if (Number(element) >= 5) {
+            sum += 5;
+          } else {
+            sum += Number(element);
+          }
+        });
+        return sum;
+      }
+
+      // console.log(getNumberOfDango("3 50")); // 8
+      // console.log(getNumberOfDango("100 500")); // 10
+      // console.log(getNumberOfDango("2 4")); // 6
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 42.お題：衣替え
+      function isReadyForSummer(s) {
+        var ex = /S/g; // 正規表現
+        var array = s.match(ex);
+        if (array == null) {
+          return "NG";
+        } else {
+          return array.length >= 5 ? "OK" : "NG";
+        }
+      }
+
+      // console.log(isReadyForSummer("W W W W W S S S S S")); // OK
+      // console.log(isReadyForSummer("S S W W S W W W W W")); // NG
+      // console.log(isReadyForSummer("W S S S S S S S S W")); // OK
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 43.お題：ピラミッドの作り方
+      function getNumberOfHuman(n) {
+        let sum = 0;
+        for (let counter = n; counter > 0; counter--) {
+          sum += counter;
+        }
+        return sum;
+      }
+
+      // console.log(getNumberOfHuman(4)); // 10
+      // console.log(getNumberOfHuman(10)); // 55
+      // console.log(getNumberOfHuman(50)); // 1275
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 44.お題：トリック・オア・トリート
+      function candyOrChocolate(s) {
+        if (s == "chocolate" || s == "candy") {
+          return "Thanks";
+        } else {
+          return "No!";
+        }
+      }
+
+      // console.log(candyOrChocolate("chocolate")); // Thanks!
+      // console.log(candyOrChocolate("candy")); // Thanks!
+      // console.log(candyOrChocolate("pannacotta")); // No!
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 45.お題：11/11
+      function canParty(s) {
+        let sub = s.length - 11;
+        if (sub >= 0) {
+          return "OK";
+        } else {
+          return Math.abs(sub);
+        }
+      }
+
+      // console.log(canParty("11111111111")); // OK
+      // console.log(canParty("1111")); // 7
+      // console.log(canParty("1111111111111111")); // OK
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 46.お題：ワインのキャッチコピー
+      function bestCopy(s) {
+        let outText = "Best in ".concat(s);
+        return outText;
+      }
+
+      // console.log(bestCopy("a decade")); // Best in a decade
+      // console.log(bestCopy("the world")); // Best in the world
+      // console.log(bestCopy("history ever")); // Best in history ever
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 47.お題：ガチャ期待値計算
+      function probabilityGetSSR(n, t) {
+        let prop = 1;
+        for (let counter = 0; counter < t; counter++) {
+          prop *= (100 - n) / 100;
+        }
+        return Math.round(100 - 100 * prop);
+      }
+
+      // console.log(probabilityGetSSR(1, 100)); // 63
+      // console.log(probabilityGetSSR(1.5, 70)); // 65
+      // console.log(probabilityGetSSR(1, 200)); // 87
+
+      // 参考：https://www.4gamer.net/games/999/G999905/20160305003/
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 48.お題：調理計画
+      function getStartTimeForCook(s, t) {
+        let array = s.split(":");
+        let timeSumMin = Number(array[0]) * 60 + Number(array[1]);
+        let timeMin = timeSumMin - t;
+        let h = Math.floor(timeMin / 60);
+        let m = Math.floor(timeMin % 60);
+        return h.toString() + ":" + m.toString();
+      }
+
+      // console.log(getStartTimeForCook("19:00", 90)); // 17:30
+      // console.log(getStartTimeForCook("20:00", 20)); // 19:40
+      // console.log(getStartTimeForCook("20:30", 80)); // 19:10
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 49.お題：しかたないから全角にしてやるか
+      function convertToUppercase(str) {
+        return str.replace(/[0-9]/g, function (s) {
+          return String.fromCharCode(s.charCodeAt(0) + 0xfee0);
+        });
+      }
+
+      // console.log(convertToUppercase("1234567")); // １２３４５６７
+      // console.log(convertToUppercase("1111111")); // １１１１１１１
+      // console.log(convertToUppercase("1145140")); // １１４５１４０
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 50.お題：リストラ計画
+      function fireEmployees(employees, fireEmployees) {
+        let employeesList = employees;
+        let fireEmployeesList = fireEmployees.split(" ");
+
+        for (let index = 0; index < fireEmployeesList.length; index++) {
+          employeesList = employeesList.replace(fireEmployeesList[index], "");
+        }
+        return employeesList;
+      }
+
+      // console.log(
+      //   fireEmployees(
+      //     "Jotaro Joseph Avdol Polnareff Tenmei Iggy",
+      //     "Avdol Tenmei Iggy"
+      //   )
+      // ); // Jotaro Joseph Polnareff
+      // console.log(
+      //   fireEmployees(
+      //     "Giorno Bucciarati Abbacchio Mista Narancia Fugo Trish",
+      //     "Bucciarati Abbacchio Narancia"
+      //   )
+      // ); // Giorno Mista Fugo Trish
+      // console.log(
+      //   fireEmployees(
+      //     "Jolyne Ermes Emporio F・F Weather Anasui",
+      //     "Jolyne Ermes F・F Weather Anasui"
+      //   )
+      //); // Emporio
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 51.お題：プロフィールの表示
+      function outputProfile(obj) {
+        let outText = "";
+        if (obj.name != null && obj.age != null && obj.gender != null) {
+          if (obj.gender == "male") {
+            outText = "彼の名前は" + obj.name + "で" + obj.age + "歳です";
+          } else {
+            outText = "彼女の名前は" + obj.name + "で" + obj.age + "歳です";
+          }
+          return outText;
+        } else {
+          return "情報がありません";
+        }
+      }
+      // const taro = {
+      //   name: "Taro",
+      //   age: 25,
+      //   gender: "male",
+      // };
+
+      // console.log(outputProfile(taro)); //彼の名前はTaroで25歳です
+
+      // const hanako = {
+      //   name: "Hanako",
+      //   age: 30,
+      //   gender: "female",
+      // };
+
+      // console.log(outputProfile(hanako)); // 彼女の名前はHanakoで30歳です
+
+      // const hatena = {
+      //   name: "hatena",
+      //   age: 20,
+      // };
+
+      // console.log(outputProfile(hatena)); //  情報がありません
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 52.お題：お買い物リスト
+      function combineArray(a, b) {
+        let outText = "[";
+        b.forEach((element) => {
+          a.push(element);
+        });
+
+        for (let index = 0; index < a.length; index++) {
+          if (index == a.length - 1) {
+            outText += '"' + a[index] + '"';
+          } else {
+            outText += '"' + a[index] + '"' + ",";
+          }
+        }
+        outText += "]";
+        return outText;
+      }
+
+      // const abc = ["a", "b", "c"];
+      // const def = ["d", "e", "f"];
+
+      // console.log(combineArray(abc, def)); //["a", "b", "c", "d", "e", "f"]
+
+      // const gen = ["米", "トイレットペーパー", "ちゅーる", "酒"];
+      // const yui = ["洗剤", "肉", "ブロッコリー"];
+
+      // console.log(combineArray(gen, yui)); // ["米", "トイレットペーパー", "ちゅーる", "酒", "洗剤", "肉", "ブロッコリー"]
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 53.お題：成績を晒す
+      function createBadScoreArray(a) {}
+
+      console.log(createBadScoreArray("15 8 9 100 26 1")); // 1 8 9 15 26 100
+
+      console.log(createBadScoreArray("50 15 89 5 61 2 44")); // 2 5 15 44 50 61 89
+
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 54.お題：特定の文字列を含むか
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      // 55.お題：アンケートデータの作成
+      // ここまで＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    </script>
+  </body>
+</html>
